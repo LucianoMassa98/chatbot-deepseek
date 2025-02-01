@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 import os
 import logging
 import json
+from fastapi.middleware.cors import CORSMiddleware
+import re
 
 # Cargar variables de entorno
 load_dotenv()
@@ -11,12 +13,26 @@ load_dotenv()
 # Configuración de logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
+# Crear la app FastAPI
 app = FastAPI()
 
+# Agregar middleware de CORS
+origins = [
+    "http://localhost:5173",  # Ajusta el puerto si es necesario
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # Permitir solicitudes desde localhost
+    allow_credentials=True,
+    allow_methods=["*"],  # Permitir todos los métodos HTTP
+    allow_headers=["*"],  # Permitir todos los encabezados
+)
+
+# Clase Pydantic para el mensaje del usuario
 class Message(BaseModel):
     user_message: str
 
-# Cargar respuestas desde un archivo externo
+# Ruta del archivo de respuestas
 RESPUESTAS_FILE = "respuestas.json"
 
 def cargar_respuestas():
@@ -31,11 +47,11 @@ RESPUESTAS = cargar_respuestas()
 
 DEFAULT_RESPONSE = "Hola! Soy el chatbot de Destored. ¿En qué puedo ayudarte?"
 
-# Procesamiento de mensajes
+# Función para procesar los mensajes
 def process_message(message: str) -> str:
     message_lower = message.lower()
     for key, response in RESPUESTAS.items():
-        if key in message_lower:
+        if re.search(key, message_lower):  # Usa búsqueda por patrones
             return response
     return DEFAULT_RESPONSE
 
