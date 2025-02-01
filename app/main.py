@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel  # Asegúrate de importar BaseModel desde pydantic
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 import json
@@ -28,7 +29,7 @@ app.add_middleware(
 )
 
 class Message(BaseModel):
-    user_message: str
+    user_message: str  # Aquí usas BaseModel para definir el esquema de la entrada
 
 # Cargar respuestas desde un archivo externo
 RESPUESTAS_FILE = "respuestas.json"
