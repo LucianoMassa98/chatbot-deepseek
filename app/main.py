@@ -1,11 +1,8 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from dotenv import load_dotenv
-import os
-import logging
-import json
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import re
+from dotenv import load_dotenv
+import json
+import logging
 
 # Cargar variables de entorno
 load_dotenv()
@@ -13,27 +10,27 @@ load_dotenv()
 # Configuración de logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-# Crear la app FastAPI
 app = FastAPI()
 
-# Agregar middleware de CORS
+# Lista de orígenes permitidos
 origins = [
-    "https://www.destored.org",  # Permitimos solicitudes desde www.destored.org
+    "http://localhost:5173",  # Para desarrollo local
+    "https://www.destored.org",  # Tu dominio en producción
 ]
 
+# Agregar middleware de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # Permitir solicitudes desde los orígenes especificados
+    allow_origins=origins,  # Permitimos solicitudes desde los orígenes especificados
     allow_credentials=True,
-    allow_methods=["*"],  # Permitir todos los métodos HTTP
-    allow_headers=["*"],  # Permitir todos los encabezados
+    allow_methods=["*"],  # Permitimos todos los métodos HTTP
+    allow_headers=["*"],  # Permitimos todos los encabezados
 )
 
-# Clase Pydantic para el mensaje del usuario
 class Message(BaseModel):
     user_message: str
 
-# Ruta del archivo de respuestas
+# Cargar respuestas desde un archivo externo
 RESPUESTAS_FILE = "respuestas.json"
 
 def cargar_respuestas():
@@ -48,11 +45,11 @@ RESPUESTAS = cargar_respuestas()
 
 DEFAULT_RESPONSE = "Hola! Soy el chatbot de Destored. ¿En qué puedo ayudarte?"
 
-# Función para procesar los mensajes
+# Procesamiento de mensajes
 def process_message(message: str) -> str:
     message_lower = message.lower()
     for key, response in RESPUESTAS.items():
-        if re.search(key, message_lower):  # Usa búsqueda por patrones
+        if key in message_lower:
             return response
     return DEFAULT_RESPONSE
 
