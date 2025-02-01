@@ -15,14 +15,17 @@ app = FastAPI()
 
 # Lista de orígenes permitidos
 origins = [
-    "http://localhost:5173",  # Para desarrollo local
-    "https://www.destored.org",  # Tu dominio en producción
+    "http://localhost:5173",
+    "https://destored.org",  # Sin "www" si no es necesario
+    "https://www.destored.org",
+    "http://destored.org"
 ]
+
 
 # Agregar middleware de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # Permitimos solicitudes desde los orígenes especificados
+    allow_origins=["*"],  # Permitimos solicitudes desde los orígenes especificados
     allow_credentials=True,
     allow_methods=["*"],  # Permitimos todos los métodos HTTP
     allow_headers=["*"],  # Permitimos todos los encabezados
