@@ -1,14 +1,22 @@
 {
-    "producto": "Tenemos una amplia gama de productos digitales. Visita https://www.destored.org/tienda",
-    "contacto": "Puedes contactarnos en contacto@destored.org",
-    "servicios": "Ofrecemos desarrollo de software, marketing digital y consultoría. Conoce más en https://www.destored.org/servicios",
-    "soporte": "Si necesitas soporte, envíanos un correo a soporte@destored.org o visita nuestra sección de ayuda en https://www.destored.org/soporte",
-    "pasantías": "En Destored ofrecemos pasantías de 2 meses en proyectos reales. Más información en https://www.destored.org/pasantias",
-    "adlab": "AdLab es nuestra agencia de marketing digital y publicidad. Descubre más en https://www.destored.org/adlab",
-    "a todo motor": "Nuestra plataforma para gestión de eventos automovilísticos. Detalles en https://www.destored.org/atodomotor",
-    "aconex": "AConex es nuestra solución para clínicas y gestión de turnos. Conoce más en https://www.destored.org/aconex",
-    "ecommerce": "Ofrecemos desarrollo de ecommerce personalizados con React y Node.js. Consulta nuestros planes en https://www.destored.org/ecommerce",
-    "streaming": "Estamos lanzando un canal de streaming con contenido gamer y más. Síguenos en https://www.destored.org/streaming",
-    "equipo": "Nuestro equipo está compuesto por expertos en desarrollo, marketing y diseño. Únete a nosotros en https://www.destored.org/equipo",
-    "scrum": "Capacitamos a nuestros equipos en metodologías ágiles y Scrum. Más información en https://www.destored.org/scrum"
-}
+    "desarrollo": "Ofrecemos desarrollo de software a medida. Contamos con un equipo de expertos en diversas tecnologías.",
+    "marketing": "Armamos un equipo adaptado a tu presupuesto y necesidades.",
+    "diseño web": "Creamos sitios web responsivos y optimizados para SEO.",
+    "publicidad": "Gestión de campañas y contenido en redes sociales con Meta Ads. Solo por el 15 % de tu presupuesto.",
+    "diseño": "Contamos con un equipo de diseñadores UX/UI para crear experiencias únicas.",
+    "contacto": "Puedes contactarnos en info@destored.org o agendar una reunión en https://www.destored.org/reunion",
+    "servicios": "Ofrecemos desarrollo de software, marketing digital y consultoría.",
+    "consultoria": "Empieza con la primera sesión gratis en https://www.destored.org/reunion",
+    "soporte": "Si necesitas soporte, envíanos un correo a info@destored.org",
+    "desthub": "Tutorías semanales 1 a 1 con un Teach Leader, documentación y herramientas para aplicar conocimientos de desarrollo web por tu cuenta. Todo por 50 USD anuales. Comienza gratis en https://www.destored.org/reunion",
+    "ecommerce": "Obtén tu tienda online desde los 25 USD.",
+    "software": "Desarrollamos software a medida para empresas.",
+    "creación de contenido": "Creamos contenido digital para redes sociales, blogs y sitios web.",
+    "redes sociales": "Gestionamos tus redes sociales para aumentar tu presencia online.",
+    "automatización": "Ofrecemos servicios de automatización de procesos para mejorar la eficiencia de tu negocio.",
+    "agendar": "Puedes agendar una reunión con nosotros en https://www.destored.org/reunion",
+    "reunión": "Puedes agendar una reunión con nosotros en https://www.destored.org/reunion",
+    "portafolio": "Visita nuestro portafolio en https://www.destored.org/#work",
+    "testimonios": "Visita nuestra sección de testimonios en https://www.destored.org/testimonios"
+  }
+  
